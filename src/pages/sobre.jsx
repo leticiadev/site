@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import avatarImage from '@/images/avatar-1.jpg'
+import avatarImage from '@/images/avatar.jpeg'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -36,8 +36,11 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Sobre</title>
-        <meta name="description" content="" />
+        <title>Sobre | Leticia Martins</title>
+        <meta
+          name="description"
+          content="Saiba mais sobre Letícia Martins, engenheira de software e empreendedora em Florianópolis, Brasil, com foco em desenvolvimento web utilizando React e Next.js."
+        />
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -53,26 +56,60 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Leticia Martins
+              Sobre Mim
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 Olá, sou Letícia Martins, engenheira de software e empreendedora
-                residente em Florianópolis, Brasil.
+                baseada em Florianópolis, Brasil. Com uma paixão por tecnologia
+                e inovação, dedico-me a criar soluções que fazem a diferença
+              </p>
+              <p>
+                Ao longo da minha carreira, tenho trabalhado em projetos de
+                desenvolvimento de software, sempre com o objetivo de trazer
+                impacto positivo através da tecnologia.
+              </p>
+              <p>
+                Atualmente, estou ativamente buscando conhecimentos na área do
+                desenvolvimento web, explorando tecnologias modernas como React
+                e Next.js.
+              </p>
+              <p>
+                Acredito no poder da colaboração e estou sempre em busca de
+                novas oportunidades para aprender e crescer, tanto
+                profissionalmente quanto pessoalmente.
+              </p>
+              <p>
+                Se você deseja trocar ideias, discutir projetos ou simplesmente
+                dizer olá, sinta-se à vontade para entrar em contato. Você pode
+                me encontrar no GitHub, LinkedIn, ou enviar um email
+                diretamente. Estou sempre aberta a novas conexões e
+                oportunidades!
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+              <SocialLink
+                href="https://www.linkedin.com/in/leticia-martins-dev/"
+                icon={LinkedInIcon}
+                className="mt-4"
+              >
+                LinkedIn
+              </SocialLink>
+              <SocialLink
+                href="https://github.com/leticiadev"
+                icon={GitHubIcon}
+                className="mt-1 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              >
                 GitHub
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:leticia@leticia-martins.com"
                 icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+                className="mt-1 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                leticia@hildebrandt.com.br
+                leticia@leticia-martins.com
               </SocialLink>
             </ul>
           </div>

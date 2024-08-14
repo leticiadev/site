@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FaRegHeart } from 'react-icons/fa'
 
 import { Container } from '@/components/Container'
 
@@ -21,7 +22,19 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Leticia Martins
+                &copy; {new Date().getFullYear()} Leticia-Martins.com
+              </p>
+              <p className="flex items-center justify-center text-sm text-zinc-400 dark:text-zinc-500">
+                Desenvolvido com <FaRegHeart className="mx-1 text-red-600" /> e
+                com{' '}
+                <Link
+                  className="mx-1 text-zinc-700"
+                  target="_blank"
+                  href="https://nextjs.org/"
+                >
+                  Next.js
+                </Link>{' '}
+                em Florianópolis / SC
               </p>
             </div>
           </Container.Inner>
