@@ -18,17 +18,8 @@ function ArrowLeftIcon(props) {
   )
 }
 
-export function ArticleLayout({
-  children,
-  meta,
-  isRssFeed = false,
-  previousPathname,
-}) {
+export function ArticleLayout({ children, meta, previousPathname }) {
   let router = useRouter()
-
-  if (isRssFeed) {
-    return children
-  }
 
   return (
     <>

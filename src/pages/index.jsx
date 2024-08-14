@@ -7,41 +7,17 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
-import logoSignater from '@/images/logos/signater.png'
-import logoBaiaNorte from '@/images/logos/baia.png'
-//import logoGrupoVitali from '@/images/logos/vitali.png'
-import logoPorter from '@/images/logos/porter.png'
-import image1 from '@/images/photos/orlando.jpg'
-import image2 from '@/images/photos/image-7.jpg'
-import image3 from '@/images/photos/image-1.jpg'
-import image4 from '@/images/photos/image-6.jpg'
-import image5 from '@/images/photos/image-8.jpg'
+import logoSignater from '@/images/logos/signater.webp'
+import logoBaiaNorte from '@/images/logos/baia.webp'
+import logoGrupoVitali from '@/images/logos/vitali.webp'
+import logoPorter from '@/images/logos/porter.webp'
+import orlando from '@/images/photos/orlando.webp'
+import computador from '@/images/photos/computador.webp'
+import formula1 from '@/images/photos/formula-1.webp'
+import laptop from '@/images/photos/laptop.webp'
+import aviao from '@/images/photos/aviao.webp'
 import { formatDate } from '@/lib/formatDate'
-import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
-
-function MailIcon(props) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-      {...props}
-    >
-      <path
-        d="M2.75 7.75a3 3 0 0 1 3-3h12.5a3 3 0 0 1 3 3v8.5a3 3 0 0 1-3 3H5.75a3 3 0 0 1-3-3v-8.5Z"
-        className="fill-zinc-100 stroke-zinc-400 dark:fill-zinc-100/10 dark:stroke-zinc-500"
-      />
-      <path
-        d="m4 6 6.024 5.479a2.915 2.915 0 0 0 3.952 0L20 6"
-        className="stroke-zinc-400 dark:stroke-zinc-500"
-      />
-    </svg>
-  )
-}
 
 function BriefcaseIcon(props) {
   return (
@@ -82,21 +58,19 @@ function ArrowDownIcon(props) {
 function Article({ article }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
+      <Card.Title href={`/artigos/${article.slug}`}>{article.title}</Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>mais informações</Card.Cta>
+      <Card.Cta>Continuar lendo</Card.Cta>
     </Card>
   )
 }
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link target="_blank" className="group -m-1 p-1" {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -108,31 +82,31 @@ function Resume() {
   let resume = [
     {
       company: 'Signater',
-      title: 'Junior Software Engineer',
+      title: 'Engenheira de Software',
       logo: logoSignater,
-      start: '2021',
+      start: '2020',
       end: {
-        label: 'Present',
+        label: 'atual',
         dateTime: new Date().getFullYear(),
       },
     },
     {
       company: 'Baia Norte Food Service',
-      title: 'Administrative Assistant',
+      title: 'Assistente Administrativo',
       logo: logoBaiaNorte,
       start: '2018',
       end: '2020',
     },
-    /* {
+    {
       company: 'Grupo Vitali',
-      title: 'Administrative Assistant',
+      title: 'Engenheira de Software Junior',
       logo: logoGrupoVitali,
-      start: '2017',
-      end: '2018',
-    },*/
+      start: '2014',
+      end: '2017',
+    },
     {
       company: 'Porter do Brasil',
-      title: 'Monitoring Operator',
+      title: 'Operadora de Monitoramento',
       logo: logoPorter,
       start: '2014',
       end: '2014',
@@ -143,13 +117,18 @@ function Resume() {
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Experiências Profissionais</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
             <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+              <Image
+                src={role.logo}
+                alt=""
+                className="h-10 w-10 rounded-full bg-cover"
+                unoptimized
+              />
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -180,7 +159,7 @@ function Resume() {
         ))}
       </ol>
       <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
+        Baixar Currículo
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
@@ -193,22 +172,24 @@ function Photos() {
   return (
     <div className="mt-16 sm:mt-20">
       <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
+        {[orlando, computador, formula1, laptop, aviao].map(
+          (image, imageIndex) => (
+            <div
+              key={image.src}
+              className={clsx(
+                'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+                rotations[imageIndex % rotations.length]
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+          )
+        )}
       </div>
     </div>
   )
@@ -218,30 +199,33 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>Leticia Martins - Engenheira de software</title>
+        <title>Início | Letícia Martins</title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="Olá! Sou Letícia Martins, engenheira de software e empreendedora em Florianópolis. Especializada em React e Next.js, ajudo a transformar suas ideias em soluções inovadoras."
         />
       </Head>
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Engenheira de software.
+            Letícia Martins
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Olá, sou Letícia Martins, engenheira de software e empreendedora
-            residente em Florianópolis, Brasil.
+            Olá, sou Letícia Martins, uma engenheira de software e empreendedora
+            apaixonada por tecnologia e inovação. Baseada em Florianópolis,
+            Brasil, dedico-me a criar soluções de software impactantes e a
+            explorar tecnologias modernas como React e Next.js. Vamos juntos
+            transformar ideias em realidade!
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://github.com/leticiadev"
-              aria-label="Follow on GitHub"
+              aria-label="GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
               href="https://linkedin.com/in/leticia-martins-dev/"
-              aria-label="Follow on LinkedIn"
+              aria-label="LinkedIn"
               icon={LinkedInIcon}
             />
           </div>
@@ -266,10 +250,6 @@ export default function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
-  }
-
   return {
     props: {
       articles: (await getAllArticles())
