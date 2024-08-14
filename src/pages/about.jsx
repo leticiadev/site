@@ -36,11 +36,8 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Spencer Sharp</title>
-        <meta
-          name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
-        />
+        <title>Sobre</title>
+        <meta name="description" content="" />
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -56,30 +53,19 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Hi, I’m Leticia Martins, a software engineer
+              Leticia Martins
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                Hi, I’m Leticia Martins, a software engineer and entrepreneur
-                based in Florianópolis, Brazil. I’m the co-founder of Signater,
-                the best E-Sign as a service solution for your business.
-              </p>
-              <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                Olá, sou Letícia Martins, engenheira de software e empreendedora
+                residente em Florianópolis, Brasil.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink href="#" icon={GitHubIcon} className="mt-4">
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
-                Follow on LinkedIn
+                GitHub
               </SocialLink>
               <SocialLink
                 href="mailto:spencer@planetaria.tech"

@@ -9,7 +9,7 @@ import { Container } from '@/components/Container'
 import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons'
 import logoSignater from '@/images/logos/signater.png'
 import logoBaiaNorte from '@/images/logos/baia.png'
-import logoGrupoVitali from '@/images/logos/vitali.png'
+//import logoGrupoVitali from '@/images/logos/vitali.png'
 import logoPorter from '@/images/logos/porter.png'
 import image1 from '@/images/photos/orlando.jpg'
 import image2 from '@/images/photos/image-7.jpg'
@@ -89,7 +89,7 @@ function Article({ article }) {
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      <Card.Cta>mais informações</Card.Cta>
     </Card>
   )
 }
@@ -102,34 +102,7 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-function Newsletter() {
-  return (
-    <form
-      action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
-      </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
-      </p>
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
-        </Button>
-      </div>
-    </form>
-  )
-}
+function Newsletter() {}
 
 function Resume() {
   let resume = [
@@ -150,13 +123,13 @@ function Resume() {
       start: '2018',
       end: '2020',
     },
-    {
+    /* {
       company: 'Grupo Vitali',
       title: 'Administrative Assistant',
       logo: logoGrupoVitali,
       start: '2017',
       end: '2018',
-    },
+    },*/
     {
       company: 'Porter do Brasil',
       title: 'Monitoring Operator',
@@ -245,7 +218,7 @@ export default function Home({ articles }) {
   return (
     <>
       <Head>
-        <title>Leticia Martins - Software engineer</title>
+        <title>Leticia Martins - Engenheira de software</title>
         <meta
           name="description"
           content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
@@ -254,12 +227,11 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software engineer, founder.
+            Engenheira de software.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hi, I’m Leticia Martins, a software engineer and entrepreneur based
-            in Florianópolis, Brazil. I’m the co-founder of Signater, the best
-            E-Sign as a service solution for your business.
+            Olá, sou Letícia Martins, engenheira de software e empreendedora
+            residente em Florianópolis, Brasil.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
