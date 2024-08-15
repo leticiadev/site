@@ -33,5 +33,6 @@
     "eslint-config-next": "13.0.2",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.11"
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }
